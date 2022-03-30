@@ -1,0 +1,29 @@
+Method 1 : Otsu Thresholding (cv2.THRESH_OTSU)
+------------------------------------------------------
+
+- Using simple thresholding we needed to manually supply a threshold value of T. However ,Otsu’s thresholding attempt to be more dynamic 
+and automatically compute the optimal threshold value based on the input image.
+
+- Otsu’s method assumes that our image contains two classes of pixels: the background and the foreground.
+
+- It makes the assumption that the grayscale histogram of our pixel intensities of our image is bi-modal, 
+which simply means that the histogram is two peaks: 
+
+   1- the first sharp peak corresponds to the uniform background color of the image.
+   2-the second peak corresponds to the pill region itself.
+
+
+Method 2 : Truncate Thresholding ( THRESH_TRUNC )
+----------------------------------------------------------
+- In this type of thresholding:
+
+   . If pixel intensity value is greater than threshold, it is set to the threshold. 
+   . The pixel values are set to be the same as the threshold. 
+   . All other values remain the same.
+   .The maxValue is ignored
+
+For example : If the threshold is set to 100  :-
+-------------
+    1- All values above 100 are set to 100.
+     2-All values less than or equal to 100 are unchanged
+   
